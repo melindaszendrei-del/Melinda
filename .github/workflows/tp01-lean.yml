@@ -4,6 +4,13 @@ on:
   push:
     branches:
       - research/tp01-kw-formcore
+      - fix/trinity-ci-reference-suites-20261122
+    paths:
+      - "proof-lab/**"
+      - ".github/workflows/tp01-lean.yml"
+  pull_request:
+    branches:
+      - research/tp01-kw-formcore
     paths:
       - "proof-lab/**"
       - ".github/workflows/tp01-lean.yml"
@@ -19,9 +26,26 @@ concurrency:
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
+      # Bootstrap is required because lean-action requires an existing
+      # lake-manifest.json and the source branch did not contain one.
+      - name: Install Elan bootstrap
+        run: |
+          set -euo pipefail
+          curl -fsSLo /tmp/elan-init.sh https://elan.lean-lang.org/elan-init.sh
+          sh /tmp/elan-init.sh -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve dependency manifest before Lean action
+        working-directory: proof-lab
+        run: lake update
+      - name: Preserve the newly generated dependency manifest
+        uses: actions/upload-artifact@v4
+        with:
+          name: tp01-lake-manifest
+          path: proof-lab/lake-manifest.json
+          retention-days: 30
       - name: Build Lean project (NOT an RH proof)
         uses: leanprover/lean-action@v1
         with:
@@ -34,7 +58,7 @@ jobs:
         run: |
           lake env lean TP01KW.lean > /tmp/tp01-axioms.log
           cat /tmp/tp01-axioms.log
-          if grep -E '(sorryAx|TP01KW\..*axiom)' /tmp/tp01-axioms.log; then
+          if grep -E '(sorryAx|TP01KW\\..*axiom)' /tmp/tp01-axioms.log; then
             echo "Unexpected axiom dependency" >&2
             exit 1
           fi

@@ -1,0 +1,64 @@
+name: Trinity reference fixtures (NOT production certificates)
+
+on:
+  push:
+    branches:
+      - research/tp01-kw-formcore
+      - fix/trinity-ci-reference-suites-20261122
+    paths:
+      - "research/trinity/**"
+      - ".github/workflows/trinity-reference.yml"
+  pull_request:
+    branches:
+      - research/tp01-kw-formcore
+    paths:
+      - "research/trinity/**"
+      - ".github/workflows/trinity-reference.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reference-fixtures:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install pinned Python dependencies
+        run: python -m pip install numpy==2.3.5 sympy==1.14.0
+      - name: Execute reference examples
+        run: |
+          python research/trinity/reference_suites/trinity_reference_metric_suite_v01.py
+          python research/trinity/reference_suites/trinity_reference_topology_suite_v01.py
+          python research/trinity/reference_suites/trinity_reference_regularity_suite_v01.py
+      - name: Verify case totals and statuses fail-closed
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          base=Path("research/trinity/reference_suites")
+          cases={"metric":7,"topology":7,"regularity":9}
+          for label,total in cases.items():
+              p=base / f"trinity_reference_{label}_suite_v01_result.json"
+              report=json.loads(p.read_text(encoding="utf-8"))
+              assert report["status"]=="PASS", (label,"status")
+              assert report["tests_total"]==total, (label,"test count")
+              assert report["tests_passed"]==total, (label,"passed")
+              assert report["tests_failed"]==0, (label,"failed")
+              assert all(t["passed"] and t["expected"]==t["observed"] for t in report["tests"]),label
+              print(f"{label}: {total}/{total} reference examples passed (NOT a geometric proof)")
+          PY
+      - name: Archive generated diagnostic results
+        uses: actions/upload-artifact@v4
+        with:
+          name: trinity-reference-diagnostics
+          path: |
+            research/trinity/reference_suites/*_result.json
+            research/trinity/reference_suites/*_certificate.json
+            research/trinity/reference_suites/*_run_record.json
+            research/trinity/reference_suites/*_run.log
+          retention-days: 30
