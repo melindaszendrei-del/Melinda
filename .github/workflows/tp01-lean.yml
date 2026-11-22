@@ -1,0 +1,40 @@
+name: TP01-KW Lean check
+
+on:
+  push:
+    branches:
+      - research/tp01-kw-formcore
+    paths:
+      - "proof-lab/**"
+      - ".github/workflows/tp01-lean.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: tp01-lean-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Lean project (NOT an RH proof)
+        uses: leanprover/lean-action@v1
+        with:
+          lake-package-directory: proof-lab
+          build: true
+          test: false
+          lint: false
+      - name: Check Lean axiom dependencies
+        working-directory: proof-lab
+        run: |
+          lake env lean TP01KW.lean > /tmp/tp01-axioms.log
+          cat /tmp/tp01-axioms.log
+          if grep -E '(sorryAx|TP01KW\..*axiom)' /tmp/tp01-axioms.log; then
+            echo "Unexpected axiom dependency" >&2
+            exit 1
+          fi
