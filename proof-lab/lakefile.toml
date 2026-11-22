@@ -1,0 +1,11 @@
+name = "tp01kw"
+version = "0.1.0"
+defaultTargets = ["TP01KW"]
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.36.0"
+
+[[lean_lib]]
+name = "TP01KW"
