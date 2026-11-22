@@ -1,0 +1,38 @@
+name: Trinity Guard integrity witness (NON-authoritative)
+
+on:
+  push:
+    branches:
+      - main
+      - research/tp01-kw-formcore
+      - fix/trinity-ci-reference-suites-20261122
+    paths:
+      - "**"
+  pull_request:
+    branches:
+      - main
+      - research/tp01-kw-formcore
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  witness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Test fail-closed witness (positive and tampered fixtures)
+        run: python -m unittest discover -s security -p 'test_*.py' -v
+      - name: Verify every committed path against pin manifest
+        run: python security/trinity_guard.py
+      - name: Show Git revision for independent witness
+        run: |
+          git rev-parse HEAD
+          git status --short

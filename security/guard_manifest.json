@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "hash_algorithm": "git-blob-sha1",
+  "purpose": "TRINITY_GUARD_V01_INTEGRITY_WITNESS_NOT_BRANCH_PROTECTION",
+  "created_utc": "2026-11-22",
+  "locked_blobs": {
+    ".github/CODEOWNERS": "5352081a7f87ff1968a5658a7ffda60525426003",
+    ".github/workflows/tp01-lean.yml": "ba832d848151eaffba160fabc332e06c669f6dd2",
+    ".github/workflows/trinity-guard.yml": "58c835743172780434feb6214e2e6058fd1eed84",
+    ".github/workflows/trinity-reference.yml": "5857e8cd710591004bfc83679adf360d53cdd692",
+    "LICENSE": "b963b271c6ec30067294a122a33ac9fbf2e5a94e",
+    "README.md": "0db9c40d3439819123c528bd258b478fe0b1e91d",
+    "proof-lab/README.md": "1a57156dcb9cd3613416de29b2a01365d0562390",
+    "proof-lab/TP01KW.lean": "be6d80d27d6347e33f410bf79870e08036f4a73e",
+    "proof-lab/lakefile.toml": "e7ca5431cc4e3dae707aa7578f030d1a74390b51",
+    "proof-lab/lean-toolchain": "4c685fa085fa1c66103533e992fc82c014a12142",
+    "research/trinity/README.md": "886f8b8f916ab22a5b692d4e20cac92f6f9db885",
+    "research/trinity/RECOVERY_CHECKPOINT_2026-11-22.md": "f81ea371a8411156b5948efba7ca961f96db01e9",
+    "research/trinity/SECURITY.md": "3c04adf59f19b91d313afab3a0bac053c9c538dc",
+    "research/trinity/reference_suites/trinity_reference_metric_suite_v01.py": "bc4278e672728fc8855e7b51dd50cca1a68de62b",
+    "research/trinity/reference_suites/trinity_reference_regularity_suite_v01.py": "89d10d34d23f6c24e011bef3bc12fe5827a77540",
+    "research/trinity/reference_suites/trinity_reference_topology_suite_v01.py": "a53ed21acbb6d274a610259a76bafa9f41b0d1bc",
+    "security/README.md": "9e321414f591466f78d57bf3311c946acb374b75",
+    "security/test_trinity_guard.py": "c8d9670bef2c319b1a0875dfa9313afe58752628",
+    "security/trinity_guard.py": "2cd5855b9c7366c5b27f51d159a8338f0a64827e"
+  }
+}
