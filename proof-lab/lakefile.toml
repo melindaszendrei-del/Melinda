@@ -5,7 +5,7 @@ defaultTargets = ["TP01KW"]
 [[require]]
 name = "mathlib"
 scope = "leanprover-community"
-rev = "v4.36.0"
+rev = "v4.28.0"
 
 [[lean_lib]]
 name = "TP01KW"
