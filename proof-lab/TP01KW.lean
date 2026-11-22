@@ -42,7 +42,6 @@ theorem FormDomain.continuous_q
       ‖h‖ ^ 2 - (D.lowerBound + 1) * ‖D.embed h‖ ^ 2) := by
     funext h
     have hh := D.form_norm_sq h
-    dsimp
     linarith
   rw [heq]
   exact h3
