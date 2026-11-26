@@ -1,128 +1,84 @@
 # Adaptív Szimbiotikus Akkumulátor Rendszer (ASAS)
 
-**Önszerveződő, játékelméleti energiatároló hálózat, amely 30%-kal hatékonyabb, mint a hagyományos megoldások.**
+**Önszerveződő, játékelméleti és adaptív energiatároló hálózat — kutatási és fejlesztési koncepció.**
 
----
+Státusz: **CONCEPT / VALIDATION OPEN**  
+Dokumentációs felülvizsgálat: 2026. november 26.
 
-## 🔋 Mi az ASAS?
-Az **ASAS** egy **forradalmi energiatároló rendszer**, amely:
-✅ **Önszerveződő** – Nincs központi irányítás, a rendszer magát optimalizálja.
-✅ **Szimbiotikus** – Együttműködik más energiarendszerekkel (pl. szél, nap, hálózat).
-✅ **Játékelméleti** – Minden résztvevő nyer (Nash-egyensúly).
-✅ **Adaptív** – Alkalmazkodik a környezeti változásokhoz (pl. szélsebesség, energiaigény).
+## 1. Cél és alapelvek
 
-**Ideális alkalmazási területek:**
-- **Energiatárolás** (akkumulátorok, hidrogéntárolók).
-- **Okos hálózatok** (Smart Grids).
-- **Elektromos járművek** (V2G – Vehicle-to-Grid).
-- **Ipari rendszerek** (gyárak, adatközpontok).
+Az ASAS energiatárolók, energiaforrások, fogyasztók és hálózati kapcsolatok összehangolt működését vizsgálja.
 
----
-## 📊 Miért Forradalmi?
-| **Hagyományos Rendszer**       | **ASAS Rendszer**                     |
-|---------------------------------|---------------------------------------|
-| Fix kapacitás                  | Dinamikus, alkalmazkodik           |
-| Központosított irányítás      | Önszerveződő, decentralizált        |
-| Egyirányú energiaáramlás       | Szimbiotikus, kölcsönös energiaáramlás|
-| Magas karbantartási költség     | Alacsony, öntanuló rendszer         |
+- **Önszerveződés:** decentralizált döntéshozatal és helyi alkalmazkodás, a szükséges hálózati és biztonsági felügyelet megtartásával.
+- **Szimbiotikus együttműködés:** energia- és információcsere a résztvevők között, kölcsönös előnyre törekedve.
+- **Játékelméleti optimalizálás:** a résztvevők stratégiáinak és ösztönzőinek összehangolása, többek között Nash-egyensúly vizsgálatával. A Nash-egyensúly önmagában nem garantál közös nyereséget vagy globális optimumot.
+- **Adaptivitás:** alkalmazkodás a megújuló termelés, a fogyasztás és a környezeti feltételek változásaihoz.
 
----
-## 💡 Hogyan Működik?
-1. **Szenzorok** mérik a környezeti változásokat (pl. szél, nap, energiaigény).
-2. **AI-alapú irányítás** dönti el, hogyan tárolja/adja le az energiát.
-3. **Játékelméleti optimalizálás** biztosítja, hogy minden résztvevő nyer.
+## 2. Energetikai alkalmazások
 
-# Adaptív Szimbiotikus Rendszer (ASAS)
-**🔄 Önszerveződő, játékelméleti, szimbiotikus rendszer – energiatárolástól a pénzügyi rendszerekig.**
+- Akkumulátoros energiatároló hálózatok; hidrogéntárolás mint külön vizsgálandó alkalmazás.
+- Okoshálózatok (Smart Grids).
+- Elektromos járművek és V2G (Vehicle-to-Grid).
+- Ipari energiamenedzsment, gyárak és adatközpontok.
 
----
-## 🌍 Mi az ASAS?
-Az **ASAS** (**Adaptív Szimbiotikus Alrendszer**) egy **forradalmi keretrendszer**, amely **három alapelvre épül**:
-1. **Önszerveződés**: Nincs központi irányítás – a rendszer **önmagát optimalizálja** a környezet változásaihoz.
-2. **Szimbiotikus együttműködés**: A rendszer **együttműködik** más rendszerekkel (pl. energiahálózatok, pénzügyi rendszerek).
-3. **Játékelméleti optimalizálás**: Minden résztvevő **nyer** (Nash-egyensúly).
+A cél a tárolási és kisütési döntések jobb összehangolása, a kihasználatlan kapacitás csökkentése, valamint a változó kereslet és termelés kezelése. A hálózati energiaátirányítás csak a tényleges infrastruktúra, kapacitás, engedélyek és szabályozás keretei között lehetséges.
 
-**📌 Az ASAS nem csak akkumulátorokhoz köthető – hanem bármilyen komplex rendszerhez!**
+## 3. Tervezett működés
 
----
+| Funkció | Tervezett szerep |
+| --- | --- |
+| Szenzorok és IoT | Állapot- és környezeti adatok gyűjtése |
+| AI és gépi tanulás | Termelési és fogyasztási előrejelzés, adaptív döntéstámogatás |
+| Játékelméleti optimalizálás | Helyi stratégiák és együttműködési ösztönzők vizsgálata |
+| Decentralizált kommunikáció | Információcsere és koordináció |
+| Edge Computing | Helyi adatfeldolgozás és döntéstámogatás |
+| Blokklánc | Opcionálisan vizsgálandó tranzakciós technológia, nem igazolt követelmény |
 
-## 🔧 Alkalmazási Területek
-### **1. Energiatárolás és Hálózatok**
-- **Önszerveződő akkumulátorok**: Alkalmazkodik a szél és napenergia változásaihoz.
-- **Okos hálózatok (Smart Grids)**: Dinamikusan osztja el az energiát a fogyasztók között.
-- **Példa**: *"Ha Németországban kevés a szél, akkor az ASAS automatikusan átirányítja az energiát Spanyolországból."*
+A központi kérdés, hogy a helyi döntések és a kölcsönös kapcsolatok miként hozhatnak létre rendszerszintű alkalmazkodást. A decentralizáció nem helyettesíti a BMS-t, a védelmi funkciókat vagy a hálózati biztonsági követelményeket.
 
-### **2. Pénzügyi Rendszerek**
-- **Adaptív kamatlábak**: Alkalmazkodik a piaci változásokhoz.
-- **Önszerveződő hitelrendszerek**: A bankok és ügyfelek **közös nyereségre törekednek**.
-- **Példa**: *"Ha a kamatlábak emelkednek, az ASAS automatikusan optimalizálja a hiteldöntéseket."*
+## 4. Általánosított szimbiotikus keret
 
-### **3. Logisztika és Szállítás**
-- **Önszerveződő szállítási hálózatok**: A fuvarozók **együttműködnek**, hogy minimalizálják az üres járatokat.
-- **Példa**: *"Ha egy teherautó üresen megy vissza, az ASAS automatikusan keres rá egy új fuvarlehetőséget."*
+A korábbi dokumentáció az ASAS rövidítést Adaptív Szimbiotikus Rendszer, illetve Adaptív Szimbiotikus Alrendszer értelemben is használta. Az energetikai projekt eredeti neve változatlan. Az általánosítás külön koncepcionális alkalmazási irány, nem bizonyított, univerzálisan működő algoritmus.
 
-### **4. Ipari Rendszerek**
-- **Adaptív gyártósorok**: A gépek **önmaguktól állítják be** a termelést a kereslet szerint.
-- **Példa**: *"Ha egy gép leáll, az ASAS automatikusan átirányítja a termelést más gépekre."*
+| Terület | Vizsgálandó alkalmazás |
+| --- | --- |
+| Energia | Tárolás, megújulók és fogyasztók koordinációja |
+| Pénzügy | Résztvevői ösztönzők és adaptív döntési stratégiák |
+| Logisztika | Erőforrás-megosztás, üres fuvarok csökkentése |
+| Ipar | Gyártási kapacitások adaptív összehangolása |
+| Közösségi rendszerek | Erőforrások együttműködésen alapuló elosztása |
 
-### **5. Társadalmi Rendszerek**
-- **Önszerveződő közösségek**: A városok **együttműködnek**, hogy optimalizálják az erőforrásokat.
-- **Példa**: *"Ha egy városban kevés a víz, az ASAS automatikusan osztja el a készleteket a szomszédos városokkal."*
+Az egyes alkalmazások saját modelljeiket, korlátaikat és külön validációt igényelnek.
 
----
-## 📊 Miért Jobb, Mint a Hagyományos Rendszerek?
-| **Jellemző**               | **Hagyományos Rendszer**       | **ASAS Rendszer**                     |
-|----------------------------|--------------------------------|---------------------------------------|
-| **Irányítás**              | Központosított                | Önszerveződő, decentralizált         |
-| **Hatékonyság**            | Fix, alacsony                  | Dinamikus, **magas**                  |
-| **Rugalmasság**            | Alacsony                       | **Magas** (alkalmazkodik a változásokhoz) |
-| **Költség**                | Magas                         | Alacsony (önoptimalizáló)            |
-| **Együttműködés**          | Nincs                         | **Szimbiotikus** (minden résztvevő nyer) |
+## 5. Hatékonyság és validáció
 
----
-## 💡 Hogyan Működik a Gyakorlatban?
-### **1. Adatgyűjtés**
-- **Szenzorok és IoT eszközök** mérik a környezeti változásokat (pl. energiaigény, szélsebesség, kamatlábak).
-- **Példa**: *"Ha a szenzorok érzékelik, hogy 20%-kal nőtt a szélsebesség, az ASAS automatikusan több energiát tárol."*
+A korai ASAS-leírás 30%-os hatékonysági előnyt említett. **Ez jelenleg nem igazolt teljesítményadat.** A nyilvános kódtár alapágán nincs olyan szimuláció, mérési napló vagy referencia-összehasonlítás, amely ezt alátámasztaná. Az érték történeti kutatási célkitűzésként marad meg; az előny mértéke és a mérőszám definíciója nyitott.
 
-### **2. AI-Alapú Döntéshozatal**
-- **Géptanulás (Machine Learning)** dönti el, hogyan optimalizálja a rendszert.
-- **Példa**: *"Ha az AI előrejelez, hogy holnap kevés lesz a szél, akkor ma több energiát tárol el."*
+A hagyományos rendszerekhez viszonyított költség-, karbantartási, rugalmassági és hatékonysági előnyök szintén tesztelendő hipotézisek.
 
-### **3. Játékelméleti Optimalizálás**
-- **Nash-egyensúly keresése**: Minden résztvevő (pl. turbina, bank, teherautó) **nyer**.
-- **Példa**: *"Ha egy bank olcsóbb kamatot kínál, az ASAS automatikusan átirányítja a hiteligényeket oda."*
+### Nyitott műszaki dokumentáció és validáció
 
-### **4. Szimbiotikus Együttműködés**
-- **Kommunikáció más rendszerekkel** (pl. energiahálózatok, bankok, logisztikai rendszerek).
-- **Példa**: *"Ha egy városban kevés a víz, az ASAS automatikusan osztja el a készleteket a szomszédos városokkal."*
+- Állapotváltozók, tároló- és hálózati modell, energiaegyensúly.
+- Töltési/kisütési korlátok, veszteségek, degradáció és biztonsági feltételek.
+- Szereplők, stratégiák, hasznossági függvények és együttműködési feltételek.
+- Reprodukálható szimuláció, referenciairányítás, mérőszámok és azonos tesztfeltételek.
+- Zavarok, előrejelzési hibák és kommunikációs kiesések vizsgálata.
+- Kísérleti vagy pilotadatok; külön fizikai hardvervalidáció.
 
----
-## 🤝 Együttműködési Lehetőségek
-**Ha érdekel az ASAS, ezek a lehetőségek állnak rendelkezésre:**
-1. **Licencelés**:
-   - **Nyílt forrású licenc** (GPL/MIT) ingyenes használatra (non-profit).
-   - **Kereskedelmi licenc** (1-5% nyereségrészesedés).
-2. **Pilótaprojektek**:
-   - **Energiatároló rendszerek** (akkumulátorok, hidrogén).
-   - **Pénzügyi rendszerek** (bankok, hitelrendszerek).
-   - **Logisztika** (szállítás, raktározás).
-3. **Kutatási Együttműködés**:
-   - **Egyetemekkel** (pl. műszaki, gazdasági karok).
-   - **Kutatóintézetekkel** (pl. Fraunhofer, MIT).
+Ez a lista fejlesztési irány, nem elvégzett tesztek jegyzéke.
 
-**📧 Kapcsolat:**
-*"Ha érdekel az ASAS, írj nekünk: [melinda.szendrei@gmail.com]"*
+## 6. Együttműködés
 
----
-## 🔗 Kapcsolódó Technológiák
-- **AI és Géptanulás**: Optimalizálás, előrejelzés.
-- **IoT (Internet of Things)**: Adatgyűjtés, szenzorok.
-- **Blokklánc**: Biztonságos tranzakciók (pl. energiakereskedelem).
-- **Edge Computing**: Lokális adatfeldolgozás.
+Kutatási együttműködés, energetikai pilotprojektek, valamint külön ipari, pénzügyi és logisztikai alkalmazási kutatások lehetségesek. Az egyetemekkel és kutatóintézetekkel való együttműködés célkitűzés; a dokumentum nem állít fennálló intézményi partnerséget.
 
----
-## 📄 Licenc
-**MIT Licenc** – Szabadon használható, módosítható, terjeszthető.
-*(Ha kereskedelmi használatra kívánod, kérjük, lépj kapcsolatba velünk!)*
+Kapcsolat: melinda.szendrei@gmail.com
 
+## 7. Licenc
+
+A kódtárban található **[MIT License](LICENSE)** feltételei irányadók a licenc hatálya alá tartozó nyilvános anyagokra, beleértve a kereskedelmi felhasználás engedélyét is. A korábbi README-ben szereplő GPL/MIT non-profit korlátozás és 1–5%-os nyereségrészesedés nem az MIT-licenc feltétele. Külön szolgáltatások vagy együttműködések külön megállapodás tárgyai lehetnek, de ez nem korlátozza az MIT által megadott jogokat.
+
+## 8. Eredet és hatókör
+
+Ez a dokumentációs felülvizsgálat a korábbi nyilvános ASAS README tartalmát rendezi, a megalapozatlan teljesítményállításokat pontosítja, és elkülöníti a koncepciót az igazolt eredményektől.
+
+Az [eredeti nyilvános README](https://github.com/melindaszendrei-del/Melinda/blob/dd1283058c0980701e5c1062dac9470253f8e4d9/README.md) változatlanul elérhető a Git-történetben. A LICENSE és a külön kutatási ágak nem módosultak. Ez a felülvizsgálat nem új algoritmus, nem hardvervalidáció és nem teljes kutatási archívum.
